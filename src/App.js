@@ -32,15 +32,19 @@ class App extends Component {
             </thead>
             <tbody>
               {
-                this.state.bookList.map((row) => {
-                  return (
-                    <tr>
-                      <td>{row.author}</td>
-                      <td>{row.title}</td>
-                      <td>{row.published}</td>
-                    </tr>
-                  )
-                })
+                this.state.bookList.length !== 0 ?
+                  this.state.bookList.map((row) => {
+                    return (
+                      <tr>
+                        <td>{row.author}</td>
+                        <td>{row.title}</td>
+                        <td>{row.published}</td>
+                      </tr>
+                    )
+                  }) :
+                  <div>
+                    There are no books to show
+                </div>
               }
             </tbody>
           </table>
